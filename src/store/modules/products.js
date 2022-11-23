@@ -1,20 +1,12 @@
 import ProductsApi from '../../services/productsApi'
 
 const state = () => ({
-  products: []
+  products: new ProductsApi().getAllProducts()
 })
 
 const getters = {
-  getAllProducts() {
-    const products = ProductsApi.getAllProducts()
-    return products
-  }
-}
-
-// actions
-const actions = {
-  setProducts({ commit }, products) {
-    commit('setProducts', products)
+  getAllProducts(state) {
+    return state.products
   }
 }
 
@@ -22,6 +14,13 @@ const actions = {
 const mutations = {
   setProducts(state, products) {
     state.products = products
+  }
+}
+
+// actions
+const actions = {
+  setProducts({ commit }, products) {
+    commit('setProducts', products)
   }
 }
 

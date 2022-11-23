@@ -6,5 +6,18 @@
 </template>
 
 <script>
+import { mapGetters, mapState } from "vuex";
 
+export default {
+  data() {
+    return {};
+  },
+  computed: {
+    ...mapState("store", ["products"]),
+  },
+
+  mounted() {
+  },
+  methods: {},
+};
 </script>
