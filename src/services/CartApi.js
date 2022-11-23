@@ -1,8 +1,7 @@
-import api from 'axios'
 const BASEURL = 'https://fakestoreapi.com/carts'
 
 export default class CartApi {
-  constructor(httpClient = api) {
+  constructor(httpClient = this.$axios) {
     this._httpClient = httpClient
     this._httpClient.setBaseUrl(BASEURL)
   }
